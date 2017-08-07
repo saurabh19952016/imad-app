@@ -1,3 +1,3 @@
 console.log('Loaded!');
-var element=document.getElementById("main");
+var element=document.getElementById('madi');
 element.innerHTML="Hello";
