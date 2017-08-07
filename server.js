@@ -11,7 +11,12 @@ var articleone={
        <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
        <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>`
 };
-var htmltemplate=`<html>
+function createtemplate(data){
+   var title=data.title;
+   var heading=data.heading;
+   var date=data.date;
+   var content=data.content;
+   var htmltemplate=`<html>
 <head>
     <title>${title}</title>
      <meta name="viewpart" content="width-device-width,initial-scale=1"/>
@@ -33,13 +38,15 @@ var htmltemplate=`<html>
 </body>
 
 
-</html>
-`
+</html>`;
+return htmltemplate;
+}
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
 app.get('/article-one',function(req,res){
-   res.sendFile(path.join(__dirname, 'ui', 'article-one.html'));
+   res.send(createtemplate(articleone));
 });
 app.get('/article-two',function(req,res){
     res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
