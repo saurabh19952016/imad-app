@@ -1,5 +1,5 @@
 console.log('Loaded!');
-var element=document.getElementById('mado');
-element.onclick =function(){
-    element.style.marginLeft='100px';
+var img=document.getElementById('mado');
+img.onclick =function(){
+    img.style.marginLeft='100px';
 };
