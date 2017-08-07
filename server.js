@@ -4,66 +4,12 @@ var path = require('path');
 
 var app = express();
 app.use(morgan('combined'));
-var articles={
- 'article-one':{
-    title:'article one',
-    heading:'Article one',
-    date:'8/7/2017',content: `<p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
-       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
-       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>`
-},
-'article-two':{ title:'article two',
-    heading:'Article two',
-    date:'8/7/2017',content: `<p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
-       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
-       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>`},
-'article-three':{
-     title:'article three',
-    heading:'Article three',
-    date:'8/7/2017',content: `<p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
-       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
-       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>`
-}
-};
-function createtemplate(data){
-   var title=data.title;
-   var heading=data.heading;
-   var date=data.date;
-   var content=data.content;
-   var htmltemplate=`<html>
-<head>
-    <title>${title}</title>
-     <meta name="viewpart" content="width-device-width,initial-scale=1"/>
- <link href="/ui/style.css" rel="stylesheet" />
-</head>
-
-<body>
-   <div class="container">
-   <div>
-       <a href="/">Home</a>
-   </div>
-   <hr/>
-   <h3>${heading}</h3>
-   <div>${date}</div>
-   <div>
-      ${content}
-   </div>
-   </div>
-</body>
-
-
-</html>`;
-return htmltemplate;
-}
 
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
-app.get('/:articleName',function(req,res){
-    var articleName=req.params.articleName;
-   res.send(createtemplate(articles[articleName]));
-});
-app.get('/ui/style.css', function (req,res) {
+
+app.get('/ui/style.css', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'style.css'));
 });
 
