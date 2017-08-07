@@ -1,0 +1,21 @@
+<html>
+<head>
+    <title>Article three</title>
+</head>
+<body>
+    <meta name="viewpart" content="width-device-width,initial-scale=1"/>
+   <div>
+       <a href="/">Home</a>
+   </div>
+   <hr/>
+   <h3>Article three</h3>
+   <div>8/7/2017</div>
+   <div>
+       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
+       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
+       <p>This is the contentThis is the contentThis is the contentThis is the contentThis is the contentThis is the content</p>
+   </div>
+</body>
+
+
+</html>
